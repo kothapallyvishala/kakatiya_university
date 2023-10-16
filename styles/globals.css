@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@layer components {
+  .link {
+    @apply text-blue-500 hover:underline cursor-pointer transition-all hover:text-purple-400 select-none;
+  }
+  .active {
+    @apply border-[0.2px] border-fuchsia-400 shadow-inner rounded-md p-2;
+  }
+  .userCard {
+    @apply flex space-x-6 items-center justify-around mx-5 md:mx-0 md:space-x-0 relative border p-11 md:p-24 bg-white shadow-sm md:shadow-xl rounded-md;
+  }
+  .userCardHidden {
+    @apply md:absolute inset-0 flex justify-center items-center md:bg-black/50 z-10 md:opacity-0 transition-all group-hover:opacity-100 rounded-md;
+  }
+  .authButton {
+    @apply uppercase font-semibold px-3 p-2 bg-black text-slate-100 rounded-md transition-all hover:bg-white hover:text-slate-900 hover:ring-2 hover:ring-black;
+  }
+  .userImage {
+    @apply relative h-24 w-24 md:h-40 md:w-40 rounded-full overflow-hidden shadow-md;
+  }
+  .authCard {
+    @apply flex flex-col items-center space-y-2 md:space-y-8 group-hover:opacity-80;
+  }
+  .input {
+    @apply rounded-md w-full bg-slate-50 px-3 p-2 outline-none focus-within:shadow-md text-gray-600 border-2;
+  }
+  .label {
+    @apply text-xs uppercase p-2 font-semibold;
+  }
+}

@@ -1,0 +1,6 @@
+# Build output
+build/
+
+# Next.js artifacts
+/.next/
+/out/
